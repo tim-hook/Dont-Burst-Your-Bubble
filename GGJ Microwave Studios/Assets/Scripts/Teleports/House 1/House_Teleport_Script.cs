@@ -3,6 +3,7 @@ using UnityEngine;
 public class House_Teleport_Script : MonoBehaviour
 {
     GameObject player;
+  
     Camera camera;
     Vector2 housePos = new Vector2(22.4f, 4.4f);
 
@@ -10,6 +11,7 @@ public class House_Teleport_Script : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class House_Teleport_Script : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            
             player.transform.position = housePos;
         }
     }
