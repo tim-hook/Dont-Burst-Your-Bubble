@@ -21,11 +21,11 @@ public class BubbleBlower : MonoBehaviour
 
     private void FixedUpdate()
     {
-      
+
 
         if (m_Attcking)
         {
-            Instantiate(m_BubblePrefab,m_PointerTransform);
+            Instantiate(m_BubblePrefab,m_PointerTransform.position, transform.rotation);
         }
     }
 

@@ -29,5 +29,10 @@ public class BubbleLifeTime : MonoBehaviour
         yield return new WaitForSeconds(m_Lifetime);
         Destroy(gameObject);
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+
 }
