@@ -24,9 +24,10 @@ public class Teleport_Back_Shop : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             player.transform.position = housePos;
-            audioManager.FadeOut("ShopMusic");
+            audioManager.FadeOut("ShopMusic ");
             audioManager.FadeIn("BackgroundMusic", 75.0f);
-            
+            audioManager.SetLoopingState("BackgroundMusic", true);
+
         }
     }
 }

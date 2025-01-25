@@ -25,7 +25,8 @@ public class Shop_Teleport_Script : MonoBehaviour
         {
             player.transform.position = housePos;
             audioManager.FadeOut("BackgroundMusic");
-            audioManager.FadeIn("ShopMusic", 75.0f);
+            audioManager.FadeIn("ShopMusic ", 55.0f);
+            audioManager.SetVolume("ShopMusic ", 45.0f);
             
         }
     }
