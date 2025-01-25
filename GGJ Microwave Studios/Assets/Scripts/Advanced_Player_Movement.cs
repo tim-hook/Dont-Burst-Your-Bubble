@@ -1,5 +1,7 @@
+using Unity.Burst;
 using UnityEngine;
 
+[BurstCompile]
 public class Advanced_Player_Movement : MonoBehaviour
 {
 
@@ -10,9 +12,7 @@ public class Advanced_Player_Movement : MonoBehaviour
     [Tooltip("Defaults are 1.0f")]
     [SerializeField] private float m_MoveSpeed = 1.0f;
     [SerializeField] private float m_Drag = 1.0f;
-    
 
- 
     void Awake()
     {
         m_RB = gameObject.GetComponent<Rigidbody2D>();
