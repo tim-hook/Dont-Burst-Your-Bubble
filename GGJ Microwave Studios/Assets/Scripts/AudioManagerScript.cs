@@ -46,6 +46,8 @@ public class AudioManagerScript : MonoBehaviour
             {
 
                 initialiseAudioMembers();
+                PlaySound("BackgroundMusic");
+                SetLoopingState("BackgroundMusic", true);
 
             }
             if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TestScene"))
@@ -74,9 +76,10 @@ public class AudioManagerScript : MonoBehaviour
         }
     }
 
-    float GetVolume(string name) { return audioSources[name].volume * 100.0f; }
+   public float GetVolume(string name) { return audioSources[name].volume * 100.0f; }
 
-    void SetLoopingState(string name, bool looping)
+   
+    public void SetLoopingState(string name, bool looping)
     {
         if (audioSources.ContainsKey(name))
         {
@@ -85,12 +88,19 @@ public class AudioManagerScript : MonoBehaviour
         }
 
     }
-    void PlaySound(string name)
+  public void PlaySound(string name)
     {
 
         if (audioSources.ContainsKey(name))
         {
             audioSources[name].Play();
+            if (name == "EnemyEncountered")
+            {
+
+                FadeIn("EnemyMusic", 75);
+
+            }
+
         }
         else
         {
@@ -100,7 +110,7 @@ public class AudioManagerScript : MonoBehaviour
 
     }
 
-    void PauseSound(string name)
+    public void PauseSound(string name)
     {
 
         if (audioSources.ContainsKey(name))
@@ -114,7 +124,7 @@ public class AudioManagerScript : MonoBehaviour
         }
 
     }
-    void UnPauseSound(string name)
+    public void UnPauseSound(string name)
     {
 
         if (audioSources.ContainsKey(name))
@@ -129,7 +139,7 @@ public class AudioManagerScript : MonoBehaviour
 
     }
 
-    void StopSound(string name)
+    public void StopSound(string name)
     {
         if (audioSources.ContainsKey(name))
         {
@@ -143,7 +153,7 @@ public class AudioManagerScript : MonoBehaviour
         }
     }
 
-    void PitchUp(string name, float increase)
+    public void PitchUp(string name, float increase)
     {
         if (audioSources.ContainsKey(name))
         {
@@ -155,7 +165,7 @@ public class AudioManagerScript : MonoBehaviour
 
         }
     }
-    void PitchDown(string name, float decrease)
+    public void PitchDown(string name, float decrease)
     {
         if (audioSources.ContainsKey(name))
         {
@@ -183,7 +193,7 @@ public class AudioManagerScript : MonoBehaviour
         }
     }
 
-    void VolumeDown(string name)
+    public void VolumeDown(string name)
     {
         if (audioSources.ContainsKey(name))
         {
@@ -198,14 +208,14 @@ public class AudioManagerScript : MonoBehaviour
 
     }
 
-    void FadeOut(string name)
+   public void FadeOut(string name)
     {
 
         StartCoroutine(FadeDown(name));
         StopSound(name);
     }
 
-    void FadeIn(string name, float vol)
+    public void FadeIn(string name, float vol)
     {
         vol /= 100.0f;
         PlaySound(name);
