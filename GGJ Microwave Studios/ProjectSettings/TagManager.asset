@@ -7,6 +7,8 @@ TagManager:
   - AudioObject
   - AudioManager
   - Bullet
+  - Enemy
+
   layers:
   - Default
   - TransparentFX
