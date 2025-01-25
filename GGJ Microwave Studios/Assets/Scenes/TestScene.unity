@@ -814,6 +814,7 @@ GameObject:
   - component: {fileID: 778248953}
   - component: {fileID: 778248952}
   - component: {fileID: 778248951}
+  - component: {fileID: 778248954}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -895,6 +896,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &778248954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778248950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9310ec46126aa5b4dbc50a7c0d63c643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &889584060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -926,6 +939,18 @@ PrefabInstance:
     - target: {fileID: 2027910610891631175, guid: 34c4e640c3c217f46968ad426781a151, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2181959672311635964, guid: 34c4e640c3c217f46968ad426781a151, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 778248952}
+    - target: {fileID: 2181959672311635964, guid: 34c4e640c3c217f46968ad426781a151, type: 3}
+      propertyPath: m_CameraShake
+      value: 
+      objectReference: {fileID: 778248954}
+    - target: {fileID: 2181959672311635964, guid: 34c4e640c3c217f46968ad426781a151, type: 3}
+      propertyPath: m_ChargeSpeed
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2181959672311635964, guid: 34c4e640c3c217f46968ad426781a151, type: 3}
       propertyPath: m_CoolDownTime
@@ -5704,7 +5729,7 @@ GameObject:
   - component: {fileID: 1454458299}
   - component: {fileID: 1454458298}
   - component: {fileID: 1454458297}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
