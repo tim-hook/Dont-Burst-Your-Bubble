@@ -6,8 +6,8 @@ public class Advanced_Player_Movement : MonoBehaviour
 {
 
     private Rigidbody2D m_RB;
-    private Vector2 m_PlayerDirection;
     private Animator m_Animator;
+    public Vector2 m_PlayerDirection;
 
     [Header("Options:")]
     [Tooltip("Defaults are 1.0f")]
