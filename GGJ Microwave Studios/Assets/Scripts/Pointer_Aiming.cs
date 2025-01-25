@@ -4,46 +4,43 @@ using UnityEngine;
 [BurstCompile]
 public class Pointer_Aiming : MonoBehaviour
 {
-    
     [Header("Options:")]
-    [Tooltip("Defaults are 300.0f")]
-    [SerializeField] private float m_rotationSpeed = 300.0f;
+    [Tooltip("Default is 300.0f")]
+    [SerializeField] private float m_RotationSpeed = 300.0f;
 
-    private Vector3 m_PointerRotation;
+    [Header("Normal Vector:")]
+    [Tooltip("Use when spawning projectiles")]
+    public Vector2 m_NormalDirection;
 
+    [Header("Debug:")]
+    [Tooltip("Use to see the normal direction")]
+    [SerializeField] private bool DrawRay = false;
+
+    // Uhhhhh
     private bool m_Left = false;
 
     private bool m_Right = false;
 
-    Vector2 m_normalDirection;
-
     private void FixedUpdate()
     {
+        // Forgor about time.fixedDeltaTime
+        var rotationAmount = m_RotationSpeed * Time.fixedDeltaTime;
+
         if (m_Left)
         {
-            m_PointerRotation = transform.parent.rotation.eulerAngles;
-
-            m_PointerRotation.z = m_rotationSpeed * Time.deltaTime;
-
-            transform.parent.Rotate(m_PointerRotation);
+            transform.parent.Rotate(0, 0, rotationAmount);
         }
-
-        if (m_Right)
+        else if (m_Right)
         {
-            m_PointerRotation = transform.parent.rotation.eulerAngles;
-
-            m_PointerRotation.z = -m_rotationSpeed * Time.deltaTime;
-
-            transform.parent.Rotate(m_PointerRotation);
+            transform.parent.Rotate(0, 0, -rotationAmount);
         }
     }
 
-    void Update()
+    private void Update()
     {
-        // Uncomment for debug ray
-    // Debug.DrawRay(transform.position,transform.up,Color.red);
- 
-        m_normalDirection = transform.up;
+        if (DrawRay) Debug.DrawRay(transform.position, transform.up, Color.red);
+
+        m_NormalDirection = transform.up;
 
         // This fucking is the worst - Ryan
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -64,5 +61,4 @@ public class Pointer_Aiming : MonoBehaviour
             m_Right = false;
         }
     }
-
 }
