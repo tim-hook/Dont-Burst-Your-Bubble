@@ -13,10 +13,10 @@ public class AudioManagerScript : MonoBehaviour
 
     [SerializeField] Dictionary<string, AudioSource> audioSources = new Dictionary<string, AudioSource>();
     public AudioMixer audioMixer;
-    GameObject[] audioContainers = new GameObject[6];
+    GameObject[] audioContainers = new GameObject[10];
     [SerializeField] bool FadeOutBool = false;
     [SerializeField] bool FadeInBool = false;
-    private bool initialised;
+    private bool initialised = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -178,7 +178,7 @@ public class AudioManagerScript : MonoBehaviour
         }
     }
 
-    void SetVolume(string name, float volume)
+  public void SetVolume(string name, float volume)
     {
         volume /= 100.0f;
         if (audioSources.ContainsKey(name))

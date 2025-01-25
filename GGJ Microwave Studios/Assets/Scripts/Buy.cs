@@ -25,7 +25,7 @@ public class Buy : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //audioManager.PlaySound("BuySFX");
+            audioManager.PlaySound("BuySFX");
             Destroy(priceImage);
             Destroy(priceText);
             Destroy(gameObject);

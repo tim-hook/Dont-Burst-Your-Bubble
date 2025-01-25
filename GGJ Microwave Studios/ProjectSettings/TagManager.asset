@@ -8,15 +8,14 @@ TagManager:
   - AudioManager
   - Bullet
   - Enemy
-
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Walls
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
