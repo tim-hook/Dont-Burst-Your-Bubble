@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - AudioObject
+  - AudioManager
+  - Bullet
+  - Enemy
+
   layers:
   - Default
   - TransparentFX
