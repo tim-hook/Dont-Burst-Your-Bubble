@@ -3,7 +3,7 @@ using UnityEngine;
 public class Teleport_Back_Two : MonoBehaviour
 {
     GameObject player;
-    Vector2 housePos = new Vector2(-1.33f, 5.08f);
+    Vector2 housePos = new Vector2(-1.33f, 4.9f);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
