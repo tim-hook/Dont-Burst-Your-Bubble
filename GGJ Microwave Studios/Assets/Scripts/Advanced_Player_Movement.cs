@@ -10,7 +10,7 @@ public class Advanced_Player_Movement : MonoBehaviour
 
     [Header("Options:")]
     [Tooltip("Default is 1.0f")]
-    [SerializeField] private float m_MoveSpeed = 1.0f;
+    [SerializeField] public float m_MoveSpeed = 1.0f;
 
     [Tooltip("Default is 1.0f")]
     [SerializeField] private float m_Drag = 1.0f;
