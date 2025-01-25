@@ -16,6 +16,9 @@ public class BubbleLifeTime : MonoBehaviour
     [Tooltip("Default is 1.0f")]
     [SerializeField] private float m_Speed = 1.0f;
 
+    [Tooltip("Default is 1.0f")]
+    [SerializeField] private float m_Damage = 1.0f;
+
      private Pointer_Aiming m_Aiming;
 
     private bool m_BubblePopped = false;
@@ -23,6 +26,10 @@ public class BubbleLifeTime : MonoBehaviour
     private Animator m_Animator;
 
     private Vector2 m_BulletNormal;
+
+    private Health m_Hit;
+
+    private bool m_Damaged =false;
 
     private void Awake()
     {
@@ -62,9 +69,14 @@ public class BubbleLifeTime : MonoBehaviour
     {
         StartCoroutine(DeathAnimation());
 
-       
-
-        //TODO: ENEMY COLLISION
+        if (!m_Damaged)
+        {
+            if (m_Hit = collision.gameObject.GetComponent<Health>())
+            {
+                m_Hit.RemoveHeath(m_Damage);
+            }
+        }
+    
     }
 
     private IEnumerator DeathAnimation()
