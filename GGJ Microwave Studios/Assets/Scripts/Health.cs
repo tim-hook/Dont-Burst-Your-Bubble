@@ -21,10 +21,13 @@ public class Health : MonoBehaviour
     [SerializeField] private Animator m_Animator;
     [SerializeField] public GameObject m_GoldPickUPPrefab;
     [SerializeField] public GameObject m_BlueSlimes;
+    private GameObject ShieldUIElement;
 
     private Advanced_Player_Movement m_Advanced_Player_Movement;
 
     bool MiniBossSpawnedMinions = false;
+
+    bool PlayerShield = false;
 
     private bool m_DirtyBool = false;
 
@@ -35,6 +38,8 @@ public class Health : MonoBehaviour
         m_CurrentHealth = m_MaxHealth;
         m_Collider = GetComponent<BoxCollider2D>(); 
         m_Advanced_Player_Movement = GetComponent<Advanced_Player_Movement>();
+        
+       
         if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Boss") || gameObject.CompareTag("MiniBoss"))
         {
             m_Animator = GetComponentInChildren<Animator>();
@@ -74,17 +79,25 @@ public class Health : MonoBehaviour
             }
         }
 
+        
+
     }
-
-
+  
+    
     public void AddHeath(float health)
     {
-        m_CurrentHealth += health;
+        
+            m_CurrentHealth += health;
+        
     }
 
     public void RemoveHeath(float health)
     {
-        m_CurrentHealth -= health;
+        
+        
+            m_CurrentHealth -= health;
+        
+        
     }
 
     private IEnumerator DeathAnimation()

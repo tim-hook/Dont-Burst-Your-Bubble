@@ -28,7 +28,11 @@ public class EnemyDamage : MonoBehaviour
     {
         m_HitCooldown = true;
 
-        if (m_Hit = collision.gameObject.GetComponent<Health>())
+        if (collision.gameObject.name == "Player" && collision.gameObject.GetComponent<PickupController>().PickupShield == true)
+        {
+            collision.gameObject.GetComponent<PickupController>().RemoveShield();
+        }
+        else if (m_Hit = collision.gameObject.GetComponent<Health>())
         {
             m_Hit.RemoveHeath(m_Damage);
         }
