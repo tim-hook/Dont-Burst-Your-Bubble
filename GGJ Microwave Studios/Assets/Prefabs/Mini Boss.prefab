@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 7869835503127059480}
   m_Layer: 6
   m_Name: Mini Boss
-  m_TagString: Enemy
+  m_TagString: MiniBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,6 +333,8 @@ MonoBehaviour:
   m_Dead: 0
   m_DeathAnimationTimer: 1
   m_Animator: {fileID: 1696941449918305990}
+  m_GoldPickUPPrefab: {fileID: 1685977974278983235, guid: 729a2a2462165554c9d824e71fb764cd, type: 3}
+  m_BlueSlimes: {fileID: 7534216042252385283, guid: a29e8b3c6d250484bad660b802f82584, type: 3}
 --- !u!114 &7869835503127059480
 MonoBehaviour:
   m_ObjectHideFlags: 0

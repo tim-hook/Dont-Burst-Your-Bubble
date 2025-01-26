@@ -24,11 +24,17 @@ public class NavMesh_Follow : MonoBehaviour
         {
             agent.SetDestination(player.transform.position);
 
-            facingDirection = player.transform.position - agent.transform.position;
+            facingDirection = agent.destination - agent.transform.position;
+            Debug.Log(facingDirection);
 
             if (facingDirection.magnitude != 0)
             {
                 animator.SetFloat("Horizontal", facingDirection.x);
+
+                if (tag.Contains("Boss"))
+                {
+                    animator.SetFloat("Vertical", facingDirection.y);
+                }
             }
         }
     }
