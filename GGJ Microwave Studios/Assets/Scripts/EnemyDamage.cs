@@ -30,11 +30,19 @@ public class EnemyDamage : MonoBehaviour
 
         if (collision.gameObject.name == "Player" && collision.gameObject.GetComponent<PickupController>().PickupShield == true)
         {
+         
             collision.gameObject.GetComponent<PickupController>().RemoveShield();
+
+            
         }
         else if (m_Hit = collision.gameObject.GetComponent<Health>())
         {
             m_Hit.RemoveHeath(m_Damage);
+        }
+
+        if (gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(gameObject);
         }
         yield return new WaitForSeconds(m_AttackCooldown);
         m_HitCooldown = false;

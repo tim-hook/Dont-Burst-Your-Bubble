@@ -9,6 +9,10 @@ public class NavMesh_Follow : MonoBehaviour
     Vector2 facingDirection;
     NavMeshAgent agent;
 
+    float bossCooldown = 5.0f;
+    [SerializeField] GameObject BulletPrefab;
+    bool bossAttacking = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +22,7 @@ public class NavMesh_Follow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    async void Update()
     {
         if (player != null)
         {
@@ -33,7 +37,28 @@ public class NavMesh_Follow : MonoBehaviour
 
                 if (tag.Contains("Boss"))
                 {
+                    if (bossAttacking == true)
+                    {
+                        agent.speed = 0.0f;
+                    }
+                    else
+                    {
+                        agent.speed = 0.5f;
+                    }
                     animator.SetFloat("Vertical", facingDirection.y);
+
+                    if (bossCooldown <= 0)
+                    {
+                        bossAttacking = true;                        
+                        Instantiate(BulletPrefab, new Vector3(gameObject.transform.position.x + 0.5f, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.EulerRotation(0,0,0));
+                        Instantiate(BulletPrefab, new Vector3(gameObject.transform.position.x - 0.5f, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.EulerRotation(0,0,0));
+                        bossCooldown = 5.0f;
+                    }
+                    if (bossCooldown < 4.5f)
+                    {
+                        bossAttacking = false;
+                    }
+                    bossCooldown -= Time.deltaTime;
                 }
             }
         }

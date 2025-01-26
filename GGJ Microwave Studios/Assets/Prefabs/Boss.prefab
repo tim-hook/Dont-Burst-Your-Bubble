@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6656162655963695653}
+  BulletPrefab: {fileID: 6769337173907703553, guid: f850c10285480e54d92f15b12946a868, type: 3}
 --- !u!114 &3347735003406951438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ MonoBehaviour:
   m_DeathAnimationTimer: 1
   m_Animator: {fileID: 6656162655963695653}
   m_GoldPickUPPrefab: {fileID: 1685977974278983235, guid: 729a2a2462165554c9d824e71fb764cd, type: 3}
+  m_BlueSlimes: {fileID: 0}
 --- !u!114 &7510477131955224782
 MonoBehaviour:
   m_ObjectHideFlags: 0
