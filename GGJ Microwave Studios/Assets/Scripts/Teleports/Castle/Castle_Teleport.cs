@@ -25,6 +25,7 @@ public class Castle_Teleport_Script : MonoBehaviour
         {
             audioManager.FadeOut("BackgroundMusic");
             audioManager.FadeIn("MinibossMusic", 75);
+            audioManager.SetLoopingState("MiniBossMusic", true);
             player.transform.position = housePos;
         }
     }

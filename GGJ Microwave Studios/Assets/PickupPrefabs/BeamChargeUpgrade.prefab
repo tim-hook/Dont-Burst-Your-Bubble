@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4538673232518189559}
   - component: {fileID: 3167741361684173028}
   - component: {fileID: 8179654312436240940}
+  - component: {fileID: 6108545111419030769}
   m_Layer: 0
   m_Name: BeamChargeUpgrade
   m_TagString: Untagged
@@ -134,3 +135,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.16, y: 0.17}
   m_EdgeRadius: 0
+--- !u!114 &6108545111419030769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385985466989316009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3ee4602969e414cb15216ac9f8e132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
