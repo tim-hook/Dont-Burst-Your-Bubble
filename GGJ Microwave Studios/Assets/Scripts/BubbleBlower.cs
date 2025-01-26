@@ -21,7 +21,7 @@ public class BubbleBlower : MonoBehaviour
     [SerializeField] public float m_MaxCharge = 100.0f;
 
     [Tooltip("Should Reset at a full charge")]
-    [SerializeField] private float m_CurrentCharge = 0;
+    [SerializeField] public float m_CurrentCharge = 0;
 
     [Tooltip("Default is 50.0f")]
     [SerializeField] private float m_ChargeSpeed = 50.0f;

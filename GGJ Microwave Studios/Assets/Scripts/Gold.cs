@@ -14,20 +14,19 @@ public class Gold : MonoBehaviour
     {
         m_Gold = 0;
 
-        
+        canvas = GameObject.Find("PlayerCanvas");
+        GoldText = canvas.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
- 
+    private void Update()
+    {
+        GoldText.text = m_Gold.ToString();
+    }
 
     public void addGold(int a)
     {
-
         m_Gold += a;
-        canvas = GameObject.Find("PlayerCanvas");
-        GoldText = canvas.GetComponentInChildren<TextMeshProUGUI>();
-
-        GoldText.text = m_Gold.ToString();
     }
 
 
