@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Dead: 0
   m_DeathAnimationTimer: 1
   m_Animator: {fileID: 6372978457754042486}
+  m_GoldPickUPPrefab: {fileID: 1685977974278983235, guid: 729a2a2462165554c9d824e71fb764cd, type: 3}
 --- !u!114 &-1169000204979372792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,3 +346,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a553a406b835fa640b7dab8ced00d9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Damage: 1
+  m_AttackCooldown: 1

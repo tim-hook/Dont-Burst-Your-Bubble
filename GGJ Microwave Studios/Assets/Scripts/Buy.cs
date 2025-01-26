@@ -7,6 +7,7 @@ public class Buy : MonoBehaviour
 
     [SerializeField] GameObject priceText;
     [SerializeField] GameObject priceImage;
+    [SerializeField] int price;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,9 +24,10 @@ public class Buy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") && player.GetComponent<Gold>().m_Gold >= price)
         {
             audioManager.PlaySound("BuySFX");
+            player.GetComponent<Gold>().m_Gold -= price;
             Destroy(priceImage);
             Destroy(priceText);
             Destroy(gameObject);
