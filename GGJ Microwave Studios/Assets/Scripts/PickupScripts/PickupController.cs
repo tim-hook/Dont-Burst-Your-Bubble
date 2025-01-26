@@ -28,16 +28,10 @@ public class PickupController : MonoBehaviour
     }
     public void AddChargeMushroom()
     {
-        if (!QuickChargePickup)
-        {
-            QuickChargePickup = true;
-            QuickChargeUIElement.SetActive(true);
-        }
-    }
-    public void RemoveChargeMushroom()
-    {
-        QuickChargePickup = false;
-        QuickChargeUIElement.SetActive(false);
+
+        QuickChargePickup = true;
+        QuickChargeUIElement.SetActive(true);
+
     }
 
     public void RemoveShield()
