@@ -27,23 +27,9 @@ public class MenuManager : MonoBehaviour
         }
     }
     
-    public void LoadGameScene()
-    {
-        StartCoroutine(LoadLevel("GameScene"));
-    }
+   
 
-    public void LoadCreditsScene()
-    {
-        StartCoroutine(LoadLevel("CreditsScene"));
-    }
-    
-    public void LoadMenuScene()
-    {
-        StartCoroutine(LoadLevel("MainMenu"));
-    }
-
-
-    private IEnumerator LoadLevel(string levelName)
+    public IEnumerator LoadLevel(string levelName)
     {
         fadeImage.gameObject.SetActive (true);
         animator.SetTrigger("Start");
