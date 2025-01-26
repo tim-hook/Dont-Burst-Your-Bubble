@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MicrowaveStudiosSplashScreen_0: 2294533258121709266
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
