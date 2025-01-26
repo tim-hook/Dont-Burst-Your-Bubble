@@ -37,15 +37,6 @@ public class Advanced_Player_Movement : MonoBehaviour
         m_PlayerDirection.x = m_MoveSpeed * Input.GetAxis("Horizontal") * Time.fixedDeltaTime;
         m_PlayerDirection.y = m_MoveSpeed * Input.GetAxis("Vertical") * Time.fixedDeltaTime;
         m_RB.AddForce(m_PlayerDirection);
-
-        if (m_PlayerDirection.magnitude > 0)
-        {
-            m_Animator.speed = m_PlayerDirection.magnitude;
-        }
-        else
-        {
-            m_Animator.speed = 0.0f;
-        }
     }
         
     private void Update()
