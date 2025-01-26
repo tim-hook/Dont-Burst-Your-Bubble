@@ -26,6 +26,8 @@ public class BubbleBlower : MonoBehaviour
     [Tooltip("Default is 50.0f")]
     [SerializeField] private float m_ChargeSpeed = 50.0f;
 
+    private PickupController m_PickupController;
+    private int m_Multiplier = 1;
      private bool m_FullyCharged = false;
      private bool m_Charging = false;
      private bool m_Cooldown = false;
@@ -33,16 +35,30 @@ public class BubbleBlower : MonoBehaviour
     [SerializeField] private CameraShake m_CameraShake;
 
 
+    private void Start()
+    {
+        m_PickupController = GameObject.Find("Player").GetComponent<PickupController>();
+    }
+
 
     private void FixedUpdate()
     {
-        if (m_Charging)
+        if (m_PickupController.QuickChargePickup == true)
         {
-            m_CurrentCharge += m_ChargeSpeed * Time.fixedDeltaTime;
+            m_Multiplier = 2;
         }
         else
         {
-            m_CurrentCharge -= m_ChargeSpeed * Time.fixedDeltaTime;
+            m_Multiplier = 1;
+        }
+
+        if (m_Charging)
+        {
+            m_CurrentCharge += m_ChargeSpeed * Time.fixedDeltaTime * m_Multiplier;
+        }
+        else
+        {
+            m_CurrentCharge -= m_ChargeSpeed * Time.fixedDeltaTime * m_Multiplier;
         }
 
 
