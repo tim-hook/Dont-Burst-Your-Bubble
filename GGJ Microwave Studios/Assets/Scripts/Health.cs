@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.Burst;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [BurstCompile]
 public class Health : MonoBehaviour
@@ -30,7 +31,14 @@ public class Health : MonoBehaviour
         m_CurrentHealth = m_MaxHealth;
         m_Collider = GetComponent<BoxCollider2D>(); 
         m_Advanced_Player_Movement = GetComponent<Advanced_Player_Movement>();
-
+        if (gameObject.CompareTag("Enemy"))
+        {
+            m_Animator = GetComponentInChildren<Animator>();
+        }
+        else
+        {
+            m_Animator = GetComponent<Animator>();
+        }
     }
 
     private void Update()
@@ -78,13 +86,17 @@ public class Health : MonoBehaviour
             m_Advanced_Player_Movement.m_MoveSpeed = 0.0f;
         }
 
-        m_Animator.SetBool("is dead?", true);
+        m_Animator.SetBool("Dead?", true);
 
         yield return new WaitForSeconds(m_DeathAnimationTimer);
 
         if (!gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+        }
+        else if (gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

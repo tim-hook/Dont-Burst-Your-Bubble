@@ -90,7 +90,7 @@ public class BubbleLifeTime : MonoBehaviour
             Destroy(m_particleSystem);
 
             // Needs Death Animation
-             m_Animator.SetBool("Dead?", true);
+            m_Animator.SetBool("Dead?", true);
 
             m_AudioManagerScript.PlaySound("BubblePopSFX");
 
