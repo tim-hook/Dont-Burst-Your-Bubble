@@ -27,6 +27,7 @@ public class Cave_Teleport_Script : MonoBehaviour
             audioManager.FadeOut("BackgroundMusic");
             audioManager.PlaySound("BossEncountered");
             audioManager.FadeIn("BossTheme", 65);
+            audioManager.SetLoopingState("BossTheme", true);
 
         }
     }
