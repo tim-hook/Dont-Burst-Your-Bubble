@@ -4940,6 +4940,8 @@ MonoBehaviour:
   m_Lifetime: 2
   m_DeathAnimationTime: 0.5
   m_Speed: 1
+  m_Damage: 1
+  m_Animator: {fileID: 1387878250019646378}
 --- !u!58 &-6126418332032113356
 CircleCollider2D:
   m_ObjectHideFlags: 0

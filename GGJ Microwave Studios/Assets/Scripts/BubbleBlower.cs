@@ -108,7 +108,9 @@ public class BubbleBlower : MonoBehaviour
             m_Cooldown = true;
        
             StartCoroutine(m_CameraShake.Shake(0.1f,0.01f));
+            m_BubblePrefab.GetComponent<BubbleLifeTime>().enabled = true;
             Instantiate(m_BubblePrefab, m_PointerTransform.position, transform.rotation);
+            
             m_CurrentCharge = 0.0f;
 
             yield return new WaitForSeconds(m_CoolDownTime);

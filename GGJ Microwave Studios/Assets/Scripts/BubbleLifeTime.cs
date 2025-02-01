@@ -23,7 +23,7 @@ public class BubbleLifeTime : MonoBehaviour
 
     private bool m_BubblePopped = false;
 
-    private Animator m_Animator;
+    [SerializeField] private Animator m_Animator;
     private ParticleSystem m_particleSystem;
     private AudioManagerScript m_AudioManagerScript;
 

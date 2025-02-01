@@ -35,7 +35,7 @@ public class NavMesh_Follow : MonoBehaviour
             {
                 animator.SetFloat("Horizontal", facingDirection.x);
 
-                if (tag.Contains("Boss"))
+                if (tag.Contains("Boss") && !tag.Contains("Mini"))
                 {
                     if (bossAttacking == true)
                     {

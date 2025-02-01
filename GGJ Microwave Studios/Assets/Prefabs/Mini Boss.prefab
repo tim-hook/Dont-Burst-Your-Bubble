@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1696941449918305990}
+  BulletPrefab: {fileID: 6769337173907703553, guid: f850c10285480e54d92f15b12946a868, type: 3}
 --- !u!114 &6904371049320554942
 MonoBehaviour:
   m_ObjectHideFlags: 0

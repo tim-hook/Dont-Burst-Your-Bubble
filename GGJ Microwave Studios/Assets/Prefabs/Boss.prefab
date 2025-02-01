@@ -335,7 +335,7 @@ MonoBehaviour:
   m_DeathAnimationTimer: 1
   m_Animator: {fileID: 6656162655963695653}
   m_GoldPickUPPrefab: {fileID: 1685977974278983235, guid: 729a2a2462165554c9d824e71fb764cd, type: 3}
-  m_BlueSlimes: {fileID: 0}
+  m_BlueSlimes: {fileID: 7534216042252385283, guid: a29e8b3c6d250484bad660b802f82584, type: 3}
 --- !u!114 &7510477131955224782
 MonoBehaviour:
   m_ObjectHideFlags: 0
